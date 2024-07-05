@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1720180257 source:c:\users\genat\onedrive\Рабочий стол\project_practice\practice\main.cpp
+1720203072 source:c:\users\genat\onedrive\Рабочий стол\project_practice\practice\main.cpp
 	<iostream>
 	<vector>
+	<algorithm>
 

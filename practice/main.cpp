@@ -56,15 +56,21 @@ int main()
     size_t max_bin = *max_element(bins.begin(), bins.end());
 
     for(auto bin : bins){
-        // ¬ывести пробелы дл€ выравнивани€
+        // пробелы дл€ звездочек (из-за зеркальности)
         for (size_t i = 0; i < max_bin - bin; i++){
             cout << ' ';
         }
-        // ¬ывести звЄздочки
         for (size_t i = 0; i < bin; i++){
             cout << '*';
         }
-        cout << "| " << bin;
-        cout << endl;
+        cout << "|";
+        // шаг 2 - выравнивание
+        if (bin < 100){
+            cout << ' ';
+        }
+        if (bin < 10) {
+            cout << ' ';
+        }
+        cout << bin << endl;
     }
 }
