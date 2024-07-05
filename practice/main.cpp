@@ -7,7 +7,10 @@ using namespace std;
 int main()
 {
     size_t number_count, bin_count;
-
+    //шаг 3 - константы для масштабирования
+    const size_t SCREEN_WIDTH = 80;
+    const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
+    //ввод
     cerr << "Enter number count: ";
     cin >> number_count;
     vector<double> numbers(number_count);
@@ -17,7 +20,7 @@ int main()
     }
     cerr << "Enter bin's count: ";
     cin >> bin_count;
-
+    //массив корзин
     vector<size_t> bins(bin_count);
     double min = numbers[0];
     double max = numbers[0];
@@ -29,6 +32,7 @@ int main()
             max = x;
         }
     }
+    //вычисление граниы между корзинами
     double bin_size = (max - min) / bin_count;
     for (size_t i = 0; i < number_count; i++) {
         bool found = false;
@@ -44,27 +48,31 @@ int main()
             bins[bin_count - 1]++;
         }
     }
-    /*
-    for(auto bin : bins){
-        for (int i = 0; i < bin; i++){
-            cout << '*';
-        }
-        cout << "| " << bin;
-        cout << endl;
-    }
-    */
+    //нахождение наибольшей корзины для шага 3 и выравнивания звёздочек
     size_t max_bin = *max_element(bins.begin(), bins.end());
-
+    //вывод
     for(auto bin : bins){
-        // пробелы для звездочек (из-за зеркальности)
-        for (size_t i = 0; i < max_bin - bin; i++){
-            cout << ' ';
+        //вывод гистограммы с проверкой масштабирования
+        size_t height = MAX_ASTERISK * (static_cast<double>(bin) / max_bin);
+        if(max_bin > MAX_ASTERISK){
+            for (size_t i = 0; i < MAX_ASTERISK - height; i++){
+                cout << ' ';
+            }
+            for (size_t i = 0; i < height; i++){
+                cout << '*';
+            }
         }
-        for (size_t i = 0; i < bin; i++){
-            cout << '*';
+        else {
+            for (size_t i = 0; i < max_bin - bin; i++){
+                cout << ' ';
+            }
+            for (size_t i = 0; i < bin; i++){
+                cout << '*';
+            }
         }
         cout << "|";
-        // шаг 2 - выравнивание
+
+        // шаг 2 - выравнивание подписи корзин гистограммы
         if (bin < 100){
             cout << ' ';
         }
