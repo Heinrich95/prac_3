@@ -1,21 +1,24 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
     size_t number_count, bin_count;
-    cout << "Enter number count: ";
+
+    cerr << "Enter number count: ";
     cin >> number_count;
     vector<double> numbers(number_count);
+    cerr << "Enter numbers: ";
     for(int i = 0; i < number_count; i++){
         cin >> numbers[i];
     }
-    cout << "Enter bin's count: ";
+    cerr << "Enter bin's count: ";
     cin >> bin_count;
-    vector<size_t> bins(bin_count);
 
+    vector<size_t> bins(bin_count);
     double min = numbers[0];
     double max = numbers[0];
     for (double x : numbers) {
@@ -41,8 +44,24 @@ int main()
             bins[bin_count - 1]++;
         }
     }
+    /*
     for(auto bin : bins){
         for (int i = 0; i < bin; i++){
+            cout << '*';
+        }
+        cout << "| " << bin;
+        cout << endl;
+    }
+    */
+    size_t max_bin = *max_element(bins.begin(), bins.end());
+
+    for(auto bin : bins){
+        // Вывести пробелы для выравнивания
+        for (size_t i = 0; i < max_bin - bin; i++){
+            cout << ' ';
+        }
+        // Вывести звёздочки
+        for (size_t i = 0; i < bin; i++){
             cout << '*';
         }
         cout << "| " << bin;
