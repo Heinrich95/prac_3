@@ -1,29 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 
-int main()
-{
-    size_t number_count, bin_count;
-    //шаг 3 - константы для масштабирования
-    const size_t SCREEN_WIDTH = 80;
-    const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
-    //ввод
-    cerr << "Enter number count: ";
-    cin >> number_count;
-    vector<double> numbers(number_count);
-    cerr << "Enter numbers: ";
-    for(int i = 0; i < number_count; i++){
-        cin >> numbers[i];
+const size_t SCREEN_WIDTH = 80;
+const size_t MAX_ASTERISK = SCREEN_WIDTH - 3 - 1;
+
+vector<double> input_numbers(size_t count) {
+    vector<double> result(count);
+    for (size_t i = 0; i < count; i++) {
+        cin >> result[i];
     }
-    cerr << "Enter bin's count: ";
-    cin >> bin_count;
-    //массив корзин
-    vector<size_t> bins(bin_count);
-    double min = numbers[0];
-    double max = numbers[0];
+    return result;
+}
+void find_minmax(const vector<double>& numbers, double& min, double& max) {
+    min = numbers[0];
+    max = numbers[0];
     for (double x : numbers) {
         if (x < min) {
             min = x;
@@ -32,7 +24,11 @@ int main()
             max = x;
         }
     }
-    //вычисление граниы между корзинами
+}
+vector<double> make_histogram(const vector<double>& numbers, size_t bin_count, size_t number_count) {
+    vector<double> bins(bin_count);
+    double min, max;
+    find_minmax(numbers, min, max);
     double bin_size = (max - min) / bin_count;
     for (size_t i = 0; i < number_count; i++) {
         bool found = false;
@@ -48,11 +44,12 @@ int main()
             bins[bin_count - 1]++;
         }
     }
-    //нахождение наибольшей корзины для шага 3 и выравнивания звёздочек
-    size_t max_bin = *max_element(bins.begin(), bins.end());
-    //вывод
+    return bins;
+}
+void show_histogram_text(const vector<double>& bins){
     for(auto bin : bins){
         //вывод гистограммы с проверкой масштабирования
+        size_t max_bin = *max_element(bins.begin(), bins.end());
         size_t height = MAX_ASTERISK * (static_cast<double>(bin) / max_bin);
         if(max_bin > MAX_ASTERISK){
             for (size_t i = 0; i < MAX_ASTERISK - height; i++){
@@ -81,4 +78,19 @@ int main()
         }
         cout << bin << endl;
     }
+}
+int main()
+{
+    size_t number_count, bin_count;
+    //ввод чисел
+    cerr << "Enter number count: ";
+    cin >> number_count;
+    cerr << "Enter numbers: ";
+    const auto numbers = input_numbers(number_count);
+    //массив корзин
+    cerr << "Enter bin's count: ";
+    cin >> bin_count;
+    const auto bins = make_histogram(numbers, bin_count, number_count);
+    //вывод
+    show_histogram_text(bins);
 }
