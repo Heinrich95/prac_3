@@ -32,7 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="SVG.cpp" />
+		<Unit filename="SVG.h" />
+		<Unit filename="histogram.cpp" />
+		<Unit filename="histogram.h" />
+		<Unit filename="input_numbers.cpp" />
+		<Unit filename="input_numbers.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="make_histogram.cpp" />
+		<Unit filename="make_histogram.h" />
+		<Unit filename="output_histogram.cpp" />
+		<Unit filename="output_histogram.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

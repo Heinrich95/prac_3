@@ -4,8 +4,54 @@
 	<vector>
 	<algorithm>
 
-1720599802 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\main.cpp
+1720610040 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\main.cpp
 	<iostream>
 	<vector>
 	<algorithm>
+	"histogram.h"
+	"input_numbers.h"
+	"make_histogram.h"
+	"output_histogram.h"
+	"SVG.h"
+
+1720609112 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\histogram.h
+	<vector>
+	<algorithm>
+
+1720608904 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\histogram.cpp
+	"histogram.h"
+
+1720602746 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\histogram.h
+	<vector>
+
+1720604350 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\histogram.cpp
+	"histogram.h"
+
+1720609412 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\output_histogram.h
+	<vector>
+	<algorithm>
+	<iostream>
+
+1720609526 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\input_numbers.h
+	<vector>
+	<iostream>
+
+1720609543 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\output_histogram.cpp
+	"output_histogram.h"
+
+1720609350 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\input_numbers.cpp
+	"input_numbers.h"
+
+1720609758 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\make_histogram.h
+	<vector>
+
+1720609796 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\make_histogram.cpp
+	"make_histogram.h"
+	"histogram.h"
+
+1720610277 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\svg.h
+	<iostream>
+	<algorithm>
+	<vector>
+	<string>
 
