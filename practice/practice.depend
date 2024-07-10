@@ -4,10 +4,8 @@
 	<vector>
 	<algorithm>
 
-1720610040 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\main.cpp
+1720611169 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\main.cpp
 	<iostream>
-	<vector>
-	<algorithm>
 	"histogram.h"
 	"input_numbers.h"
 	"make_histogram.h"
@@ -49,9 +47,12 @@
 	"make_histogram.h"
 	"histogram.h"
 
-1720610277 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\svg.h
+1720613471 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\svg.h
 	<iostream>
 	<algorithm>
 	<vector>
 	<string>
+
+1720613784 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\svg.cpp
+	"SVG.h"
 

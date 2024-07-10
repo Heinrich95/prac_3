@@ -1,6 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+//#include <vector>
 #include "histogram.h"
 #include "input_numbers.h"
 #include "make_histogram.h"
@@ -21,6 +20,6 @@ int main()
     cin >> bin_count;
     const auto bins = make_histogram(numbers, bin_count, number_count);
     //вывод
-    show_histogram_text(bins);
+    //show_histogram_text(bins);
     show_histogram_svg(bins);
 }

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1720607735 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\histogram.cpp
+	<vector>
+	<iostream>
+	"histogram.h"
+
+1720604333 c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\histogram.h
+	<vector>
+
+1720607318 source:c:\users\genat\onedrive\Рабочий стол\prac_3\summer_practice\practice\test.cpp
+	"histogram.h"
+	<cassert>
+
